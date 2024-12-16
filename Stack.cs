@@ -63,5 +63,48 @@ namespace DZ_4_OTUS
                     
             }
         }
+        public virtual void Merge(Stack stack) 
+        {
+        
+        }
+
+        public static Stack Concat(params Stack[] stackArray) 
+        {
+            var returnStack = new Stack();
+
+            foreach (var itemStack in stackArray)
+            {
+                for (var i = itemStack.Size-1; i >= 0; i--)
+                {
+                    returnStack.Add(itemStack.Pop());
+                }
+
+            }
+
+            return returnStack;
+        
+        }
+
+        public void messageStorage()
+        {
+            string message = "";
+            foreach (var item in _storage)
+            {
+                if (message != "")
+                {
+                    message += $",{item}";
+                }
+                else
+                {
+                    message += item;
+                }
+
+
+            }
+            Console.WriteLine(message);
+        }
+
+
+
     }
 }
