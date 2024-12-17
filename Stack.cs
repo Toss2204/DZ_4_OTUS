@@ -95,11 +95,6 @@ namespace DZ_4_OTUS
         
         }
 
-        
-        public void Merge(Stack stack2) 
-        {
-            StackExtensions.Merge(this, stack2);
-        }
 
         public void messageStorage()
         {

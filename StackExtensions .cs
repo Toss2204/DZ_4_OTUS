@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DZ_4_OTUS
 {
-    public class StackExtensions
+    public static class StackExtensions
     {
 
-        public static void Merge(Stack stack1, Stack stack2)
+        public static void Merge(this Stack stack1, Stack stack2)
         {
             for (var i = stack2.Size - 1; i >= 0; i--)
             {
