@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             //***************Основное задание***************
+            Console.WriteLine("Основное задание:");
+            Console.WriteLine();
             var s = new Stack("a", "b", "c");
 
             // size = 3, Top = 'c'
@@ -24,16 +26,22 @@
             s.Pop();
             // size = 0, Top = null
             Console.WriteLine($"size = {s.Size}, Top = {(s.Top == null ? "null" : s.Top)}");
-            s.Pop();
-
+            //s.Pop(); //закомментил, чтобы дальше код продолжался
+            Console.WriteLine();
 
             //***************Доп задание 1***************
-            var s = new Stack("a", "b", "c");
-            s.Merge(new Stack("1", "2", "3"));
+            Console.WriteLine("Доп. задание 1:");
+            Console.WriteLine();
+            var _s = new Stack("a", "b", "c");
+            _s.Merge(new Stack("1", "2", "3"));
+            Console.WriteLine();
 
             //***************Доп задание 2***************
+            Console.WriteLine("Доп. задание 2:");
+            Console.WriteLine();
             var s1 = Stack.Concat(new Stack("a", "b", "c"), new Stack("1", "2", "3"), new Stack("А", "Б", "В"));
             s1.messageStorage();
+            Console.WriteLine();
         }
     }
 }
