@@ -1,13 +1,26 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DZ_4_OTUS
 {
+    
+
     public class Stack
     {
+        private class StackItem
+        {
+            public StackItem() 
+            {
+                string Current;
+                StackItem Previous;
+            }
+        }
+
         List<string> _storage = new List<string>();
 
         public int Size 
@@ -32,7 +45,7 @@ namespace DZ_4_OTUS
         }
         
 
-        public Stack(params string[] strings) 
+        public Stack(params string[] strings) //конструктор для строк
         {
             
             foreach (var item in strings)
@@ -63,10 +76,7 @@ namespace DZ_4_OTUS
                     
             }
         }
-        public virtual void Merge(Stack stack) 
-        {
         
-        }
 
         public static Stack Concat(params Stack[] stackArray) 
         {
@@ -83,6 +93,12 @@ namespace DZ_4_OTUS
 
             return returnStack;
         
+        }
+
+        
+        public void Merge(Stack stack2) 
+        {
+            StackExtensions.Merge(this, stack2);
         }
 
         public void messageStorage()

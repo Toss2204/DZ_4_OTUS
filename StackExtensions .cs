@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace DZ_4_OTUS
 {
-    internal class StackExtensions
+    public class StackExtensions
     {
+
+        public static void Merge(Stack stack1, Stack stack2)
+        {
+            for (var i = stack2.Size - 1; i >= 0; i--)
+            {
+                stack1.Add(stack2.Pop());
+            }
+
+            stack1.messageStorage();
+        }
+        
     }
 }
