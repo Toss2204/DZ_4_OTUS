@@ -12,15 +12,7 @@ namespace DZ_4_OTUS
 
     public class Stack
     {
-        private class StackItem
-        {
-            public StackItem() 
-            {
-                string Current;
-                StackItem Previous;
-            }
-        }
-
+        //**через коллекцию лист
         List<string> _storage = new List<string>();
 
         public int Size 
@@ -76,7 +68,18 @@ namespace DZ_4_OTUS
                     
             }
         }
-        
+
+        //**через класс СтекИтем
+        private class StackItem
+        {
+            public StackItem()
+            {
+                string Current;
+                StackItem Previous;
+            }
+        }
+
+
 
         public static Stack Concat(params Stack[] stackArray) 
         {
