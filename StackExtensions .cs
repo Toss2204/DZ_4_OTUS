@@ -11,7 +11,7 @@ namespace DZ_4_OTUS
 
         public static void Merge(this Stack stack1, Stack stack2)
         {
-            for (var i = stack2.Size - 1; i >= 0; i--)
+            for (var i = stack2.size - 1; i >= 0; i--)
             {
                 stack1.Add(stack2.Pop());
             }
