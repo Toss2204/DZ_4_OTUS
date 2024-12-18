@@ -113,8 +113,8 @@ namespace DZ_4_OTUS
                 throw new InvalidOperationException("Стек пустой!");
             }
 
-            string value = item.value;
-            item = item.previousItem;
+            string value = item.Value;
+            item = item.PreviousItem;
 
             size--;
             return value;
@@ -123,7 +123,7 @@ namespace DZ_4_OTUS
 
         public string Top
         {
-            get { return item == null ? null : item.value; }
+            get { return item == null ? null : item.Value; }
         }
 
         public void Add(string value)
@@ -131,10 +131,10 @@ namespace DZ_4_OTUS
             StackItem newItem = new StackItem();
             if (item != null)
             {
-                newItem.previousItem = item;
+                newItem.PreviousItem = item;
             }
 
-            newItem.value = value;
+            newItem.Value = value;
             item = newItem;
 
             size++;
@@ -142,8 +142,8 @@ namespace DZ_4_OTUS
 
         class StackItem
         {
-            public string value { get; set; }
-            public StackItem previousItem { get; set; }
+            public string Value { get; set; }
+            public StackItem PreviousItem { get; set; }
         }
 
         public void messageStorage()
@@ -155,13 +155,13 @@ namespace DZ_4_OTUS
             {
                 if (message != "")
                 {
-                    message += $",{item_new.value}";
+                    message += $",{item_new.Value}";
                 }
                 else
                 {
-                    message += item_new.value;
+                    message += item_new.Value;
                 }
-                item_new = item_new.previousItem;
+                item_new = item_new.PreviousItem;
 
             }
             char[] charArr = message.ToCharArray();
